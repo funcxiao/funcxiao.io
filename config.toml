@@ -6,7 +6,7 @@ theme = "LeaveIt"
 paginate = 12
 enableEmoji = true
 enableRobotsTXT = true
-googleAnalytics = ""
+googleAnalytics = "UA-136774776-1"
 
 preserveTaxonomyNames = true
 
@@ -60,7 +60,7 @@ preserveTaxonomyNames = true
 [params.social]
     GitHub = "xiaoxiaoking"
     # Twitter = "xxoo"
-    Email   = "xxoo"
+    Email   = "xyzxiaoking@gmail.com"
     # Instagram = "xxoo"
     Wechat = "/images/me/wechat.jpg"  # Wechat QRcode image
     # Facebook = "xxoo"
