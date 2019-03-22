@@ -47,10 +47,10 @@ preserveTaxonomyNames = true
     cdn_url = ""           # Base CDN URL
     home_mode = "" # post or other
 
-    google_verification = ""
+    google_verification = "Bp0N1YVpnDdbOEK_PrcqkadER6zW_Ls4I4RazwrqI4o"
    
-    description = "" # site description
-    keywords = "" # site keywords
+    description = "blog,life and more" # site description
+    keywords = "blog" # site keywords
 
     beian = ""
     baiduAnalytics = ""
