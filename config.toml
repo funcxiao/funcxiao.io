@@ -1,6 +1,6 @@
-baseURL = "http://example.org/"
+baseURL = "https://funcxiao.wang"
 languageCode = "en-us"
-title = "My New Hugo Site"
+title = "FuncXiao()"
 theme = "LeaveIt"
 
 paginate = 12
