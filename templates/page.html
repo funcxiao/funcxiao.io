@@ -1,0 +1,84 @@
+{% extends "float/templates/page.html" %}
+
+{% block content %}
+  {# <pre style="font-size: xx-small; 
+              height: 50vh; 
+              overflow: auto; 
+              padding-top: 1em; 
+              padding-bottom: 1em; 
+              margin-top: 1em; 
+              margin-bottom: 1em;
+              grid-column-start: 1;
+              grid-column-end: -1;
+              background-color: hsla(0, 0%, 90%, 1.0);">
+    <code>
+      {{ __tera_context | escape }}
+    </code>
+  </pre> #}
+
+  <article class="content-article">
+    <aside class="article-meta">
+      <time>{{ page.date }}</time>
+      <br>
+      <span>{% for tag in page.taxonomies.tags %}#{{ tag }} {% endfor %}</span>
+    </aside>
+    <main class="article-content">
+      <h1 class="heading">
+        {{ page.title }}
+      </h1>
+      <p class="description">
+        {{ page.description }}
+      </p>
+
+      <ul>
+        {% for h1 in page.toc %}
+            <li>
+                <a href="{{h1.permalink | safe}}">{{ h1.title }}</a>
+                {% if h1.children %}
+                    <ul>
+                        {% for h2 in h1.children %}
+                            <li>
+                                <a href="{{h2.permalink | safe}}">{{ h2.title }}</a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </li>
+        {% endfor %}
+        </ul>
+        
+
+      {{ page.content | safe }}
+    </main>
+    <section class="article-action-block">
+      {% if config.extra.likecoin and config.extra.likecoin_name %}
+        <div class="likeco-btn" data-name="{{ config.extra.likecoin_name }}" data-allowed-query-string=""></div>
+      {% endif %}
+      <!-- AddToAny BEGIN -->
+      <div class="addtoany-block">
+        <a href="https://www.addtoany.com/share#url={{ page.permalink }}&amp;title={{ page.title }}" target="_blank" rel="noopener noreferrer nofollow"><img class="button" src="https://static.addtoany.com/buttons/a2a.svg"></a>
+        <a href="https://www.addtoany.com/add_to/mastodon?linkurl={{ page.permalink }}&amp;linkname={{ page.title }}" target="_blank" rel="noopener noreferrer nofollow"><img class="button" src="https://static.addtoany.com/buttons/mastodon.svg"></a>
+        <a href="https://www.addtoany.com/add_to/telegram?linkurl={{ page.permalink }}&amp;linkname={{ page.title }}" target="_blank" rel="noopener noreferrer nofollow"><img class="button" src="https://static.addtoany.com/buttons/telegram.svg"></a>
+        <a href="https://www.addtoany.com/add_to/twitter?linkurl={{ page.permalink }}&amp;linkname={{ page.title }}" target="_blank" rel="noopener noreferrer nofollow"><img class="button" src="https://static.addtoany.com/buttons/twitter.svg"></a>
+        <a href="https://www.addtoany.com/add_to/facebook?linkurl={{ page.permalink }}&amp;linkname={{ page.title }}" target="_blank" rel="noopener noreferrer nofollow"><img class="button" src="https://static.addtoany.com/buttons/facebook.svg"></a>
+        <a href="https://www.addtoany.com/add_to/line?linkurl={{ page.permalink }}&amp;linkname={{ page.title }}" target="_blank" rel="noopener noreferrer nofollow"><img class="button" src="https://static.addtoany.com/buttons/line.svg"></a>
+      </div>
+      <!-- AddToAny END -->
+      {% if config.extra.utterances and config.extra.utterances_repo %}
+        <hr>
+        <script src="https://utteranc.es/client.js"
+          repo="{{ config.extra.utterances_repo | safe }}"
+          issue-term="pathname"
+          label="Comment"
+          theme="preferred-color-scheme"
+          crossorigin="anonymous"
+          async>
+        </script>
+      {% endif %}
+    </section>
+    <br>
+    {% if config.extra.likecoin and config.extra.likecoin_name %}
+      <script src="https://noobtw.github.io/likeco-btn/likeco-btn.js" async></script>
+    {% endif %}
+  </article>
+{% endblock content %}

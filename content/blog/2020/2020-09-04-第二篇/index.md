@@ -1,11 +1,11 @@
 +++
-title = "Float theme for Zola"
-description = "Float features and usage guide"
+title = "第二篇"
+description = ""
 draft = false
 [taxonomies]
 tags = ["Float", "Zola"]
 [extra]
-feature_image = "Float.svg"
+feature_image = "overview.jpg"
 feature = true
 link = ""
 +++
@@ -14,7 +14,7 @@ link = ""
 
 Float 是一款為 [Zola](https://www.getzola.org/) 設計的佈景主題。
 
-## 特色
+## tres
 
 - 依據不同的螢幕尺寸提供最佳化版面，從小尺寸到大尺寸都可獲得優秀的閱讀體驗。
 - 文章卡片提供兩種卡片尺寸，重點文章可採用更醒目的寬版卡片。

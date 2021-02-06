@@ -35,5 +35,5 @@ twitter_account = "@xxx"
 likecoin = false
 # likecoin_name = "xxx"
 
-utterances = false
-# utterances_repo = "xxx/xxx"
+utterances = true
+utterances_repo = "funcchaos/funcxiao.io"
