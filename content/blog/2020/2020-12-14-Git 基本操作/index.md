@@ -1,9 +1,9 @@
 +++
-title = "第二篇"
-description = ""
+title = "Git 基本操作"
+description = "git常用的基础操作记录"
 draft = false
 [taxonomies]
-tags = ["Float", "Zola"]
+tags = ["git"]
 [extra]
 feature_image = "overview.jpg"
 feature = true

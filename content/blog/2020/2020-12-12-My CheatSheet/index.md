@@ -3,7 +3,7 @@ title = "My CheatSheet"
 description = "First blog"
 draft = false
 [taxonomies]
-tags = ["Float", "Zola"]
+tags = ["Zola"]
 [extra]
 feature_image = "overview.jpg"
 feature = true
