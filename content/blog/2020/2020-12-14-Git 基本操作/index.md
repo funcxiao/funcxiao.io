@@ -5,12 +5,12 @@ draft = false
 [taxonomies]
 tags = ["git"]
 [extra]
-feature_image = "overview.jpg"
+feature_image = "overview.png"
 feature = true
 link = ""
 +++
 
-![Float](Float.png)
+![Git](git.jpg)
 
 Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency.
 
@@ -135,5 +135,5 @@ Git有很多GUI工具可以使用，这里有一份[GUI Clients](https://git-scm
 
 ## reference
 
-[Pro Git](https://git-scm.com/book)
-[净化Git之rebase变基的使用](https://www.cnblogs.com/sunsky303/p/12851267.html)
+- [Pro Git](https://git-scm.com/book)
+- [净化Git之rebase变基的使用](https://www.cnblogs.com/sunsky303/p/12851267.html)
