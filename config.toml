@@ -36,4 +36,4 @@ likecoin = false
 # likecoin_name = "xxx"
 
 utterances = true
-utterances_repo = "funcchaos/funcxiao.io"
+utterances_repo = "funcxiao/funcxiao.io"
