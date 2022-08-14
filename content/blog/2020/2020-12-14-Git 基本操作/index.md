@@ -113,6 +113,16 @@ $git submodule update --init #初始化并更新
 $git submodule update --init --recursive #初始化、抓取并检出任何嵌套的子模块
 ```
 
+其他常用命令
+```shell
+# 清除全部未提交修改， 包括没有 add 和 已经 add 未 commit 的
+$git checkout . && git clean -xdf
+# 暂存
+$ git stash save/list/apply/drop
+```
+
+
+
 ## GUI
 
 Git有很多GUI工具可以使用，这里有一份[GUI Clients](https://git-scm.com/downloads/guis)列表,当然常用就那几个：
@@ -136,4 +146,3 @@ Git有很多GUI工具可以使用，这里有一份[GUI Clients](https://git-scm
 ## reference
 
 - [Pro Git](https://git-scm.com/book)
-- [净化Git之rebase变基的使用](https://www.cnblogs.com/sunsky303/p/12851267.html)
