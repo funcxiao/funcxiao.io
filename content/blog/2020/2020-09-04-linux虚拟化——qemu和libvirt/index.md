@@ -60,13 +60,13 @@ Libvirt是一组工具集，提供了虚拟化平台的管理以及一套管理�
 
 首先安装上面提到的包：
 
-```shell
+```sh
 $yay -R qemu qemu-arch-extra qemu-img libvirt virt-install virt-manager ebtables dnsmasq bridge-utils openbsd-netcat
 ```
 
 #### 配置KVM启用嵌套虚拟化
 
-```shell
+```sh
 # 检测硬件是否支持虚拟化，不支持就不用看了
 $LC_ALL=C lscpu | grep Virtualization
 # 查看内核模块是否已经加载，没有就modprobe手动加载一下
@@ -106,13 +106,13 @@ polkit.addRule(function(action, subject) {
 
 ```conf
 #unix_sock_group = "libvirt"
-#unix_sock_ro_perms = "0777"  
+#unix_sock_ro_perms = "0777"
 #unix_sock_rw_perms = "0770"
 #auth_unix_ro = "none"
 #auth_unix_rw = "none"
 ```
 
-```shell
+```sh
 # 创建并加入libvirt用户组
 $newgrp libvirt
 $sudo usermod -aG libvirt $USER
@@ -123,7 +123,7 @@ $sudo systemctl restart libvirtd
 
 ### 使用`Fedora CoreOS`镜像创建虚拟机
 
-```shell
+```sh
 # 安装coreos-installer
 $cargo install coreos-installer
 # 下载对应qemu的镜像
@@ -135,7 +135,7 @@ $wget https://github.com/coreos/fcct/releases/download/v0.10.0/fcct-x86_64-unkno
 
 创建配置文件`myconf.fcc`：
 
-```fcc
+```yaml
 variant: fcos
 version: 1.2.0
 passwd:
@@ -147,9 +147,9 @@ passwd:
 
 生成`ignition`配置文件,并安装：
 
-```shell
+```sh
 $./fcc --pretty --strict < myconf.fcc > myconf.ign
-# 使用virt-install创建虚拟机
+# 使用 virt-install 创建虚拟机
 virt-install --connect="qemu:///system" --name="fcos-test-01" --vcpus="2" --memory="4096" \
         --os-variant="fedora-coreos-stable" --import --graphics=none \
         --disk "path=/home/xxxx/myStorage/myVirt/fcos-test-01.qcow2,size=20,backing_store=/home/xxxx/myStorage/images/fedora-coreos-33.20210117.3.2-qemu.x86_64.qcow2" \
@@ -158,14 +158,14 @@ virt-install --connect="qemu:///system" --name="fcos-test-01" --vcpus="2" --memo
 
 如果运行结果正常，那么虚拟机就创建成功了，接下来通过`SSH`连接上去(也可以使用virt-manager来管理)：
 
-```shell
+```sh
 # 查看所有虚拟机
 $virsh list --all
-# 查看虚拟机fcos-test-01的ip
+# 查看虚拟机 fcos-test-01 的ip
 $virsh domifaddr fcos-test-01  --source arp
-# coreos默认不使用密码登录，之前已经配置过公钥了
+# coreos 默认不使用密码登录，之前已经配置过公钥了
 $ssh core@<ip address>
-# virsh关机
+# virsh 关机
 $virsh shutdown <name>
 # 强制关机
 $virsh destroy <name>
@@ -175,7 +175,7 @@ $virsh suuspend <name>
 $virsh resume <name>
 # 重启
 $virsh reboot <name>
-# 更多看virsh -h
+# 更多看 virsh -h
 ```
 
 依据上面的步骤，再创建两个，留着给后面用。

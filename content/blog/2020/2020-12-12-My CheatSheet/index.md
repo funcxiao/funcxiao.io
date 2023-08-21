@@ -33,7 +33,7 @@ Float 是一款為 [Zola](https://www.getzola.org/) 設計的佈景主題。
 在您的 Zola 專案資料夾內：
 
 把 Float 以 Git 子模組的方式加入專案內：
-```shell
+```sh
 git submodule add https://gitlab.com/float-theme/float.git theme/float
 ```
 
@@ -53,13 +53,13 @@ taxonomies = [
 
 複製 float/static/ 的所有子資料夾與檔案到您的 static/：
 
-```shell
+```sh
 cp -r themes/float/static/* static/
 ```
 
 複製 float/content/ 的所有子資料夾與檔案到您的 content/：
 
-```shell
+```sh
 cp -r themes/float/content/* content/
 ```
 

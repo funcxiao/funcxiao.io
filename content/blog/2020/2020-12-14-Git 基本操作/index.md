@@ -20,7 +20,7 @@ Git是一个版本管理工具，开源、免费、敏捷高效，源于`Linus T
 
 ## How to install and config?
 
-```shell
+```sh
 $yay -S git # 安装git，不同的系统大致相同，或者直接下载安装
 $git config -l # 查看git config
 $git config --global init.defaultbranch=main #出于世界潮流，现在github默认分支已经是main,本地设置一下方便统一
@@ -35,7 +35,7 @@ $cat ~/.ssh/id_rsa.pub # 把密钥复制到对应的网站或者其他配置的�
 
 ### basic usage
 
-```shell
+```sh
 $git init               # git初始化项目
 $git add -A             # git add 来添加文件到git中，-A添加所有
 $git commit -m "xxxx"   # git commit -m 提交
@@ -46,7 +46,7 @@ $git push -u origin main # 推送到远端仓库
 关于`git commit`规范，广为人知的就是[`Angular Commit Message Guidelines`](https://github.com/angular/angular.js/blob/master/DEVELOPERS.md#-git-commit-guidelines),进而衍生出了[`conventional-commits`](https://github.com/conventional-commits)。
 如果只是追求最简单的用法，直接使用[`commitizen/cz-cli`](https://github.com/commitizen/cz-cli)即可:
 
-```shell
+```sh
 npm install -g commitizen cz-conventional-changelog
 echo '{ "path": "cz-conventional-changelog" }' > ~/.czrc
 ```
@@ -55,7 +55,7 @@ echo '{ "path": "cz-conventional-changelog" }' > ~/.czrc
 
 [查看提交历史](https://git-scm.com/book/zh/v2/Git-%E5%9F%BA%E7%A1%80-%E6%9F%A5%E7%9C%8B%E6%8F%90%E4%BA%A4%E5%8E%86%E5%8F%B2)
 
-```shell
+```sh
 $git log -n  #查看n条
 $git log -n <filename>  #查看指定文件最近n条版本信息
 $git log --pretty=format:"%h - %an, %ar : %s" #指定格式:简写哈希值，作者，修订时间，提交说明
@@ -65,7 +65,7 @@ $git log --graph #在日志旁以 ASCII 图形显示分支与合并历史
 
 [回退版本](https://git-scm.com/book/zh/v2/Git-%E5%9F%BA%E7%A1%80-%E6%92%A4%E6%B6%88%E6%93%8D%E4%BD%9C)
 
-```shell
+```sh
 $git reset --hard HEAD^~2 #回滚到前两个版本
 $git reset --hard <commit-id>  #回滚到指定版本号，可以只写前几位，git会自动寻找匹配的版本号
 $git reset HEAD filename #取消指定暂存文件(git add的文件)
@@ -75,18 +75,18 @@ $git reflog #查看所有HEAD操作记录，可以查看恢复reset操作
 
 [创建、合并分支](https://git-scm.com/book/zh/v2/Git-%E5%88%86%E6%94%AF-%E5%88%86%E6%94%AF%E7%9A%84%E6%96%B0%E5%BB%BA%E4%B8%8E%E5%90%88%E5%B9%B6)
 
-```shell
+```sh
 $git branch dev #创建dev分支
 $git checkout dev #切换到dev分支
 $git checkout -b hotfix #创建并切换到hotfix分支
 $git checkout dev && git merge hotfix #切换并合并hotfix分支
 $git branch -d hotfix #删除已经合并的hotfix分支
-$git checkout -b testing <commit-id> #从指定版本创建testing分支 
+$git checkout -b testing <commit-id> #从指定版本创建testing分支
 ```
 
 远程
 
-```shell
+```sh
 $git remote add origin xxx #添加远程仓库
 $git remote -v #查看远程仓库信息
 $git remote rm origin #删除添加的远程仓库
@@ -96,7 +96,7 @@ $git push -u origin mian #推送到远程分支
 [变基](https://git-scm.com/book/zh/v2/Git-分支-变基)
 变基(rebase)和合并(merge)功能类似，都是用来整合分支，变基适合用来向远程分支推送时让提交历史更加整洁
 
-```shell
+```sh
 $git checkout experiment
 $git rebase master #通过变基实现不同分支之间的合并
 $git pull --rebase #解决本地与远端同一分支提交历史不一致
@@ -104,7 +104,7 @@ $git pull --rebase #解决本地与远端同一分支提交历史不一致
 
 [子模块](https://git-scm.com/book/zh/v2/Git-%E5%B7%A5%E5%85%B7-%E5%AD%90%E6%A8%A1%E5%9D%97#_git_submodules)
 
-```shell
+```sh
 $git submodule add https://github.com/chaconinc/DbConnector #添加子模块,会创建 .gitmoudle 文件
 $git submodule init #用来初始化本地配置文件
 $git submodule update #从该项目中抓取所有数据并检出父项目中列出的合适的提交
@@ -114,7 +114,7 @@ $git submodule update --init --recursive #初始化、抓取并检出任何嵌�
 ```
 
 其他常用命令
-```shell
+```sh
 # 清除全部未提交修改， 包括没有 add 和 已经 add 未 commit 的
 $git checkout . && git clean -xdf
 # 暂存

@@ -26,7 +26,7 @@ link = ""
 
 本地创建项目：
 
-```Shell
+```sh
 # 创建文件夹myblog，Git初始化并新建zola项目
 $ git init && zola init
 # 添加Float主题，作为Git子模块加入
